@@ -48,7 +48,7 @@ function Activity4() {
 
   return (
     <div className="page">
-      <h1 className="title">User List</h1>
+      <h1 className="title">Movie List</h1>
 
       <div className="container">
         {users.map((user) => (
