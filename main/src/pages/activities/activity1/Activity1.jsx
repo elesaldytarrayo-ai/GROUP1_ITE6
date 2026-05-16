@@ -9,7 +9,9 @@ export default function Activity1() {
       </section>
 
       <section className="group-photo">
-        <img src={groupPhoto} alt="Group Photo" />
+        <div className="photo-placeholder">
+          Group Photo Here
+        </div>
       </section>
 
       <section className="members">
