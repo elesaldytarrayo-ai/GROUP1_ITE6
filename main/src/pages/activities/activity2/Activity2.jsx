@@ -1,32 +1,38 @@
+import React, { useState, useRef } from "react";
 import "./Activity2.css";
 
 export default function Activity2() {
+  const [count, setCount] = useState(0);
+  const renderCount = useRef(0);
+
+  // track renders
+  renderCount.current += 1;
+
   return (
-    <main className="landing">
-      <section className="hero">
-        <h1>Welcome to Our Landing Page</h1>
-        <p>Meet Our Team</p>
-      </section>
+    <div className="container">
 
-      <section className="group-photo">
-        <img src={groupPhoto} alt="Group Photo" />
-      </section>
+      <h1>Counter App</h1>
 
-      <section className="members">
-        <h2>Our Members</h2>
+      <h2>Current Count: {count}</h2>
 
-        <div className="member-list">
-          <div className="member-card"><h3>Angelica Labbao</h3></div>
-          <div className="member-card"><h3>Jelyza Francisco</h3></div>
-          <div className="member-card"><h3>Melvin Lumanta</h3></div>
-          <div className="member-card"><h3>Jane Clea Genoguin</h3></div>
-          <div className="member-card"><h3>John Lorenz Jaropojop</h3></div>
-        </div>
-      </section>
+      <div className="buttons">
+        <button onClick={() => setCount(count + 1)}>
+          ➕ Increment
+        </button>
 
-      <footer className="footer">
-        <p>Group 1</p>
-      </footer>
-    </main>
+        <button onClick={() => setCount(count - 1)}>
+          ➖ Decrement
+        </button>
+
+        <button onClick={() => setCount(0)}>
+          🔄 Reset
+        </button>
+      </div>
+
+      <p className="info">
+        This component rendered: {renderCount.current} times
+      </p>
+
+    </div>
   );
 }

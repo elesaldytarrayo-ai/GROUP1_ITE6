@@ -1,0 +1,140 @@
+/* PAGE BACKGROUND */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f2027, #0b1320, #050a12);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* MAIN CARD */
+.container {
+  width: 90%;
+  max-width: 650px;
+  padding: 50px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+
+  text-align: center;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-6px);
+}
+
+/* HEADER */
+.title {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #00e6ff;
+  text-shadow: 0 0 20px rgba(0, 230, 255, 0.4);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #aaa;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* COUNTER DISPLAY */
+.display {
+  margin: 40px 0;
+}
+
+.count {
+  font-size: 90px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+/* MESSAGE */
+.message {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #dcdcdc;
+  transition: 0.3s ease;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* BASE BUTTON */
+.btn {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  color: #0b1b1f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* INCREASE BUTTON */
+.increase {
+  background: linear-gradient(135deg, #00ffcc, #00c9ff);
+}
+
+/* DECREASE BUTTON */
+.decrease {
+  background: linear-gradient(135deg, #ff6a00, #ff2e63);
+  color: white;
+}
+
+/* HOVER EFFECT */
+.btn:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* ACTIVE CLICK */
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 35px;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .container {
+    padding: 35px 20px;
+  }
+
+  .count {
+    font-size: 70px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
