@@ -10,27 +10,33 @@ export default function Activity2() {
   return (
     <div className="landing">
 
+      {/* FLOATING ENERGY PARTICLES */}
       <div className="floating-bg">
+        <span>⚡</span>
+        <span>🔮</span>
         <span>✨</span>
-        <span>🌸</span>
-        <span>💫</span>
-        <span>🦋</span>
+        <span>💠</span>
       </div>
 
       <div className="container">
 
-        <h1 className="title">✨ Magic Counter</h1>
-        <h2 className="subtitle">Fairy Energy Level: {count}</h2>
+        <h1 className="title">NEURAL ENERGY CORE</h1>
+        <p className="subtitle">SYSTEM CONTROL INTERFACE</p>
+
+        <div className="counter-display">
+          <h2>CORE ENERGY OUTPUT</h2>
+          <div className="energy">{count}</div>
+        </div>
 
         <div className="buttons">
-          <button onClick={() => setCount(count + 1)}>➕ Add Magic</button>
-          <button onClick={() => setCount(count - 1)}>➖ Remove Magic</button>
-          <button onClick={() => setCount(0)}>🔄 Reset Spell</button>
+          <button onClick={() => setCount(count + 1)}>⚡ BOOST</button>
+          <button onClick={() => setCount(count - 1)}>⬇ DRAIN</button>
+          <button onClick={() => setCount(0)}>🔄 RESET CORE</button>
         </div>
 
         <div className="card">
-          <p>🌟 This spell has been cast:</p>
-          <h3>{renderCount.current} times</h3>
+          <p>SYSTEM RENDER CYCLE</p>
+          <h3>{renderCount.current}</h3>
         </div>
 
       </div>

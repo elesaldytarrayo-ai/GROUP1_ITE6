@@ -6,15 +6,15 @@ export default function Activity3() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (count === 0) setMessage("✨ Magic is dormant");
-    else if (count > 0 && count < 10) setMessage("🌸 Fairy energy rising");
-    else setMessage("💫 Maximum enchantment reached");
+    if (count === 0) setMessage("SYSTEM: Dormant Energy Core");
+    else if (count < 10) setMessage("SYSTEM: Fairy Energy Stabilizing...");
+    else setMessage("SYSTEM: Maximum Enchantment Engaged!");
   }, [count]);
 
   return (
     <div className="page">
 
-      {/* floating particles */}
+      {/* PARTICLES */}
       <div className="particles">
         <span>✨</span>
         <span>🌸</span>
@@ -22,31 +22,30 @@ export default function Activity3() {
         <span>🦋</span>
       </div>
 
+      {/* CORE PANEL */}
       <div className="container">
 
-        <div className="header">
-          <h1 className="title">FAIRY COUNTER</h1>
-          <p className="subtitle">Magic Energy Control System</p>
-        </div>
+        <h1 className="title">FAIRY NEURAL CORE</h1>
+        <p className="subtitle">SYSTEM CONTROL INTERFACE</p>
 
         <div className="display">
-          <span className="count">{count}</span>
+          <div className="count">{count}</div>
         </div>
 
         <p className="message">{message}</p>
 
         <div className="buttons">
           <button className="btn increase" onClick={() => setCount(count + 1)}>
-            ✨ Add Magic
+            ✨ BOOST ENERGY
           </button>
 
           <button className="btn decrease" onClick={() => setCount(count - 1)}>
-            🌙 Remove Magic
+            🌙 DRAIN ENERGY
           </button>
         </div>
 
         <div className="footer">
-          <p>🌸 Activity 3 • Fairy Counter System</p>
+          <p>FAIRY SYSTEM ONLINE</p>
         </div>
 
       </div>

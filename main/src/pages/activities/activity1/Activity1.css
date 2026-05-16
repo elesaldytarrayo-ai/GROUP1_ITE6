@@ -1,38 +1,42 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* SCROLL FIX */
 html, body {
-  height: auto;
-  min-height: 100%;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-}
-
-body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top, #ffe4f3, #dbeafe, #fdf2ff);
-  color: #2d2d2d;
 }
 
-/* MAIN */
+/* =========================
+   BACKGROUND (FAIRY + SCI-FI MIX)
+========================= */
+body {
+  background: radial-gradient(circle at top, #0b1020, #1a0b2e, #050816);
+  color: #e5e7eb;
+}
+
+/* =========================
+   MAIN WRAPPER
+========================= */
 .landing {
   min-height: 100vh;
-  height: auto;
+  position: relative;
+  padding-bottom: 80px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  position: relative;
-  padding-bottom: 80px;
-  overflow: visible;
 }
 
-/* FLOATING BACKGROUND */
+/* =========================
+   FLOATING PARTICLES (UPGRADED)
+========================= */
 .floating-bg {
   position: fixed;
   inset: 0;
@@ -43,94 +47,103 @@ body {
 .floating-bg span {
   position: absolute;
   font-size: 22px;
-  opacity: 0.5;
-  animation: floatUp 12s linear infinite;
+  opacity: 0.6;
+  animation: floatUp 14s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
 .floating-bg span:nth-child(1) { left: 10%; top: 90%; }
-.floating-bg span:nth-child(2) { left: 35%; top: 95%; animation-delay: 2s; }
+.floating-bg span:nth-child(2) { left: 30%; top: 95%; animation-delay: 2s; }
 .floating-bg span:nth-child(3) { left: 60%; top: 92%; animation-delay: 4s; }
-.floating-bg span:nth-child(4) { left: 85%; top: 98%; animation-delay: 1s; }
+.floating-bg span:nth-child(4) { left: 80%; top: 98%; animation-delay: 1s; }
 
-/* CONTENT ABOVE BG */
-.info-panel,
-.hero,
-.group-photo,
-.members,
-.instructor,
-.footer {
-  position: relative;
+/* =========================
+   GLASS INFO PANEL (MCO STYLE UPGRADE)
+========================= */
+.info-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 40px 20px;
   z-index: 2;
 }
 
-/* INFO */
-.info-panel {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 30px 20px;
-  width: 100%;
-}
-
 .info-card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
+  width: 220px;
   padding: 18px;
-  border-radius: 16px;
-  min-width: 200px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 25px rgba(91,107,255,0.15),
+    0 0 25px rgba(255,105,180,0.12);
+
+  transition: 0.4s ease;
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 0 35px rgba(91,107,255,0.3),
+    0 0 35px rgba(255,105,180,0.2);
 }
 
 .info-card h3 {
-  font-size: 13px;
+  font-size: 12px;
+  letter-spacing: 2px;
   color: #5b6bff;
 }
 
 .info-card p {
-  margin-top: 5px;
+  margin-top: 6px;
+  font-weight: 600;
 }
 
-/* HERO */
+/* =========================
+   HERO (FAIRY + HOLO STYLE)
+========================= */
 .hero {
-  padding: 40px 20px;
-  max-width: 900px;
+  text-align: center;
+  padding: 60px 20px;
+  z-index: 2;
 }
 
 .sparkle {
-  font-size: 45px;
-  animation: bounce 2s infinite;
+  font-size: 52px;
+  animation: floatGlow 2.5s infinite ease-in-out;
 }
 
-/* ✅ NO -webkit GRADIENT TEXT */
 .hero h1 {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 52px;
+  font-weight: 900;
 
-  background: linear-gradient(90deg, #ff69b4, #5b6bff);
+  background: linear-gradient(90deg, #ff69b4, #5b6bff, #a78bfa);
   background-clip: text;
   color: transparent;
 
-  text-fill-color: transparent; /* fallback modern browsers */
+  animation: glowText 3s infinite alternate;
 }
 
 .hero p {
-  font-size: 20px;
   margin-top: 10px;
-  color: #666;
+  font-size: 18px;
+  color: #b8b8ff;
+  letter-spacing: 2px;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS (MCO STYLE UPGRADE)
+========================= */
 .hero-btns {
-  margin-top: 20px;
+  margin-top: 22px;
   display: flex;
-  justify-content: center;
   gap: 12px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -141,102 +154,152 @@ body {
   border: none;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .primary-btn {
   background: linear-gradient(90deg, #ff69b4, #5b6bff);
   color: white;
+  box-shadow: 0 0 20px rgba(255,105,180,0.3);
 }
 
 .secondary-btn {
-  background: white;
-  border: 2px solid #5b6bff;
-  color: #5b6bff;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(91,107,255,0.5);
 }
 
 .primary-btn:hover,
 .secondary-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* GROUP PHOTO */
+/* =========================
+   GROUP PHOTO (HOLO FRAME)
+========================= */
 .group-photo {
-  margin: 40px 0;
+  margin: 50px 0;
+  z-index: 2;
 }
 
 .group-photo img {
-  width: 90%;
-  max-width: 520px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  width: 92%;
+  max-width: 560px;
+
+  border-radius: 22px;
+
+  border: 2px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 0 40px rgba(255,105,180,0.15),
+    0 0 60px rgba(91,107,255,0.15);
+
+  transition: 0.4s ease;
 }
 
-/* MEMBERS */
+.group-photo img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   MEMBERS (CARD GRID UPGRADE)
+========================= */
 .members {
-  padding: 30px 20px;
+  z-index: 2;
+  padding: 30px;
+  text-align: center;
 }
 
 .members h2 {
-  font-size: 28px;
-  color: #5b6bff;
+  font-size: 30px;
+  color: #ff69b4;
+  text-shadow: 0 0 10px rgba(255,105,180,0.3);
 }
 
 .member-list {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  max-width: 900px;
 }
 
 .member-card {
-  width: 280px;
-  padding: 14px;
+  padding: 16px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.75);
-  border-left: 5px solid #ff69b4;
-  transition: 0.3s;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+
+  border-left: 4px solid #5b6bff;
+
+  transition: 0.3s ease;
 }
 
 .member-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-6px) scale(1.03);
+  border-left: 4px solid #ff69b4;
 }
 
-/* INSTRUCTOR */
+/* =========================
+   INSTRUCTOR (HOLO CARD)
+========================= */
 .instructor {
-  margin-top: 40px;
+  margin-top: 50px;
+  text-align: center;
+  z-index: 2;
 }
 
 .instructor h2 {
-  color: #ff69b4;
+  color: #5b6bff;
 }
 
 .instructor-card {
-  margin-top: 10px;
-  padding: 16px 20px;
+  margin-top: 12px;
+  display: inline-block;
+  padding: 18px 24px;
+
   border-radius: 16px;
-  background: rgba(255,255,255,0.8);
-  border-left: 5px solid #5b6bff;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: 0 0 25px rgba(91,107,255,0.2);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER (GLOW BAR)
+========================= */
 .footer {
-  margin-top: 50px;
-  padding: 20px;
+  margin-top: 60px;
   width: 100%;
-  background: linear-gradient(90deg, #ffb6e6, #a5b4fc);
+  text-align: center;
+  padding: 20px;
+
+  background: linear-gradient(90deg, #ff69b4, #5b6bff);
   color: white;
+
+  box-shadow: 0 0 30px rgba(255,105,180,0.3);
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes floatUp {
   0% { transform: translateY(0); opacity: 0; }
   50% { opacity: 1; }
-  100% { transform: translateY(-800px); opacity: 0; }
+  100% { transform: translateY(-900px); opacity: 0; }
 }
 
-@keyframes bounce {
+@keyframes glowText {
+  0% { filter: drop-shadow(0 0 5px #ff69b4); }
+  50% { filter: drop-shadow(0 0 15px #5b6bff); }
+  100% { filter: drop-shadow(0 0 10px #a78bfa); }
+}
+
+@keyframes floatGlow {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }

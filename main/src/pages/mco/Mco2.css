@@ -1,0 +1,270 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #070b1a, #0b1020, #050816);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* =========================
+   MAIN WRAPPER
+========================= */
+.mco {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   NAVBAR (HOLOGRAPHIC)
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 32px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  animation: slideDown 0.8s ease;
+}
+
+/* LOGO */
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #f472b6, #60a5fa, #a78bfa);
+  background-clip: text;
+  color: transparent;
+
+  animation: glowText 3s infinite alternate;
+}
+
+/* NAV BUTTONS */
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+/* BUTTON BASE */
+.nav-links button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  background: rgba(255,255,255,0.06);
+  color: #e5e7eb;
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BUTTON HOVER GLOW */
+.nav-links button:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(90deg, #f472b6, #60a5fa);
+  box-shadow: 0 0 20px rgba(244,114,182,0.4);
+}
+
+/* BUTTON CLICK EFFECT */
+.nav-links button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 12px;
+
+  background: rgba(10, 15, 35, 0.85);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+
+  min-width: 160px;
+
+  animation: fadeIn 0.3s ease;
+}
+
+/* dropdown items */
+.dropdown-menu button {
+  text-align: left;
+  background: transparent;
+}
+
+.dropdown-menu button:hover {
+  background: linear-gradient(90deg, #f472b6, #60a5fa);
+  transform: translateX(5px);
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  position: relative;
+}
+
+/* subtle scanline effect (movie UI feel) */
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* =========================
+   HOME TITLE
+========================= */
+.home {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  background: linear-gradient(90deg, #f472b6, #60a5fa, #a78bfa);
+  background-clip: text;
+  color: transparent;
+
+  animation: glowText 3s infinite alternate;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 4px;
+
+  color: #94a3b8;
+}
+
+/* =========================
+   INSTRUCTOR CARD
+========================= */
+.instructor-box {
+  margin-top: 30px;
+  padding: 18px 26px;
+
+  display: inline-block;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 25px rgba(96,165,250,0.15),
+    0 0 25px rgba(244,114,182,0.10);
+
+  transition: 0.3s ease;
+}
+
+.instructor-box:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.instructor-box h3 {
+  color: #f472b6;
+  font-size: 14px;
+}
+
+.instructor-box p {
+  margin-top: 5px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  0% {
+    filter: drop-shadow(0 0 5px #f472b6);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #60a5fa);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px #a78bfa);
+  }
+}

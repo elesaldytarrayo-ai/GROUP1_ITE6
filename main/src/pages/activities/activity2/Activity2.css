@@ -7,77 +7,141 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #ffe4f3, #dbeafe, #fdf2ff);
-  overflow: hidden;
-  color: #3b3b3b;
+
+  /* 🌌 DEEP SPACE UI */
+  background: radial-gradient(circle at top, #050816, #0b1020, #020617);
+  color: #e5e7eb;
+  overflow-x: hidden;
 }
 
-/* MAIN */
+/* MAIN LAYOUT */
 .landing {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 40px;
 }
 
-/* FLOATING BACKGROUND */
+/* FLOATING PARTICLES (UPGRADED NEON STYLE) */
+.floating-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .floating-bg span {
   position: absolute;
-  font-size: 22px;
-  animation: floatUp 8s linear infinite;
-  opacity: 0.6;
+  font-size: 18px;
+  opacity: 0.2;
+  animation: floatUp 14s linear infinite;
+  color: #60a5fa;
+  filter: drop-shadow(0 0 8px #a78bfa);
 }
 
-.floating-bg span:nth-child(1) { left: 15%; top: 90%; }
+.floating-bg span:nth-child(1) { left: 12%; top: 90%; }
 .floating-bg span:nth-child(2) { left: 35%; top: 95%; animation-delay: 2s; }
-.floating-bg span:nth-child(3) { left: 65%; top: 92%; animation-delay: 4s; }
+.floating-bg span:nth-child(3) { left: 60%; top: 92%; animation-delay: 4s; }
 .floating-bg span:nth-child(4) { left: 85%; top: 98%; animation-delay: 1s; }
 
-/* CONTAINER */
+/* MAIN CORE PANEL */
 .container {
+  width: 100%;
+  max-width: 540px;
+
+  padding: 42px 32px;
+  border-radius: 26px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 40px rgba(96,165,250,0.15),
+    0 0 60px rgba(167,139,250,0.12);
+
   text-align: center;
-  padding: 50px 40px;
+  z-index: 2;
 
-  width: 90%;
-  max-width: 650px;
-
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.15);
-
-  animation: fadeIn 0.8s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* TITLE (FIXED - NO WEBKIT NEEDED) */
+/* ENERGY CORE BACKLIGHT */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  background: radial-gradient(circle at center,
+    rgba(96,165,250,0.15),
+    transparent 60%);
+
+  z-index: -1;
+}
+
+/* TITLE (NEURAL SYSTEM STYLE) */
 .title {
-  font-size: 40px;
+  font-size: 34px;
+  font-weight: 900;
 
-  background: linear-gradient(90deg, #ff69b4, #5b6bff);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
   background-clip: text;
-  -webkit-background-clip: text;
-
   color: transparent;
 
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
-/* SUBTITLE */
 .subtitle {
-  font-size: 20px;
-  color: #5b6bff;
-  margin-bottom: 25px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  letter-spacing: 3px;
 }
 
-/* BUTTONS */
+/* ENERGY CORE PANEL */
+.counter-display {
+  margin: 26px 0;
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: inset 0 0 20px rgba(96,165,250,0.08);
+}
+
+.counter-display h2 {
+  font-size: 12px;
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+/* BIG ENERGY NUMBER (REACTOR CORE) */
+.energy {
+  font-size: 72px;
+  font-weight: 900;
+
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+  background-clip: text;
+  color: transparent;
+
+  animation: corePulse 2.5s infinite ease-in-out;
+}
+
+/* BUTTON CONTROL PANEL */
 .buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .buttons button {
@@ -87,58 +151,61 @@ body {
   border-radius: 999px;
 
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
 
-  background: linear-gradient(90deg, #ff69b4, #5b6bff);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   color: white;
 
-  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+  box-shadow: 0 0 20px rgba(96,165,250,0.25);
 
   transition: 0.3s ease;
 }
 
 .buttons button:hover {
   transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(167,139,250,0.4);
 }
 
 .buttons button:active {
   transform: scale(0.95);
 }
 
-/* CARD */
+/* SYSTEM STATUS CARD */
 .card {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 16px;
+  padding: 18px;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid #60a5fa;
 
-  border-left: 5px solid #ff69b4;
+  text-align: center;
+}
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.card p {
+  font-size: 12px;
+  color: #94a3b8;
 }
 
 .card h3 {
-  font-size: 28px;
-  color: #5b6bff;
+  font-size: 26px;
+  color: #f472b6;
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 @keyframes floatUp {
   0% { transform: translateY(0); opacity: 0; }
   50% { opacity: 1; }
-  100% { transform: translateY(-800px); opacity: 0; }
+  100% { transform: translateY(-900px); opacity: 0; }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes pulseGlow {
+  0%,100% { filter: drop-shadow(0 0 8px #60a5fa); }
+  50% { filter: drop-shadow(0 0 18px #a78bfa); }
+}
+
+@keyframes corePulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }

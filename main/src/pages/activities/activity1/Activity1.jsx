@@ -16,26 +16,27 @@ export default function Activity1() {
       {/* INFO */}
       <section className="info-panel">
         <div className="info-card">
-          <h3>Project Name</h3>
-          <p>Landing Page</p>
+          <h3>PROJECT</h3>
+          <p>Landing Page Evolution</p>
         </div>
 
         <div className="info-card">
-          <h3>Subject</h3>
-          <p>Application Development & Emerging Tech</p>
+          <h3>TECH STYLE</h3>
+          <p>Fairy × Sci-Fi Hybrid UI</p>
         </div>
 
         <div className="info-card">
-          <h3>Final</h3>
-          <p>MCO2</p>
+          <h3>VERSION</h3>
+          <p>MCO2 Enhanced</p>
         </div>
       </section>
 
       {/* HERO */}
       <section className="hero">
         <div className="sparkle">✨</div>
-        <h1>Welcome to Our Fairytale World</h1>
-        <p>Meet Our Dream Team</p>
+
+        <h1>Welcome to a Digital Fairytale</h1>
+        <p>Where Fantasy Meets Holographic Reality</p>
 
         <div className="hero-btns">
           <button className="primary-btn">Explore Team</button>
@@ -50,7 +51,7 @@ export default function Activity1() {
 
       {/* MEMBERS */}
       <section className="members">
-        <h2>Our Enchanted Members</h2>
+        <h2>Enchanted Team Members</h2>
 
         <div className="member-list">
           <div className="member-card"><h3>Angelica Labbao</h3></div>
@@ -71,7 +72,7 @@ export default function Activity1() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <p>🌸 Group 1 • BSIT2C 🌸</p>
+        <p>✨ Group 1 • BSIT2C • MCO2 ✨</p>
       </footer>
 
     </main>
