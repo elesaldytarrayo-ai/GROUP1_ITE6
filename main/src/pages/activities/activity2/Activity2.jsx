@@ -5,34 +5,35 @@ export default function Activity2() {
   const [count, setCount] = useState(0);
   const renderCount = useRef(0);
 
-  // track renders
   renderCount.current += 1;
 
   return (
-    <div className="container">
+    <div className="landing">
 
-      <h1>Counter App</h1>
-
-      <h2>Current Count: {count}</h2>
-
-      <div className="buttons">
-        <button onClick={() => setCount(count + 1)}>
-          ➕ Increment
-        </button>
-
-        <button onClick={() => setCount(count - 1)}>
-          ➖ Decrement
-        </button>
-
-        <button onClick={() => setCount(0)}>
-          🔄 Reset
-        </button>
+      <div className="floating-bg">
+        <span>✨</span>
+        <span>🌸</span>
+        <span>💫</span>
+        <span>🦋</span>
       </div>
 
-      <p className="info">
-        This component rendered: {renderCount.current} times
-      </p>
+      <div className="container">
 
+        <h1 className="title">✨ Magic Counter</h1>
+        <h2 className="subtitle">Fairy Energy Level: {count}</h2>
+
+        <div className="buttons">
+          <button onClick={() => setCount(count + 1)}>➕ Add Magic</button>
+          <button onClick={() => setCount(count - 1)}>➖ Remove Magic</button>
+          <button onClick={() => setCount(0)}>🔄 Reset Spell</button>
+        </div>
+
+        <div className="card">
+          <p>🌟 This spell has been cast:</p>
+          <h3>{renderCount.current} times</h3>
+        </div>
+
+      </div>
     </div>
   );
 }

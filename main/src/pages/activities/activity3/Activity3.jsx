@@ -6,21 +6,27 @@ export default function Activity3() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (count === 0) {
-      setMessage("Counter is at zero");
-    } else if (count > 0 && count < 10) {
-      setMessage("Keep going!");
-    } else {
-      setMessage("High Count!");
-    }
+    if (count === 0) setMessage("✨ Magic is dormant");
+    else if (count > 0 && count < 10) setMessage("🌸 Fairy energy rising");
+    else setMessage("💫 Maximum enchantment reached");
   }, [count]);
 
   return (
     <div className="page">
+
+      {/* floating particles */}
+      <div className="particles">
+        <span>✨</span>
+        <span>🌸</span>
+        <span>💫</span>
+        <span>🦋</span>
+      </div>
+
       <div className="container">
+
         <div className="header">
-          <h1 className="title">COUNTER SYSTEM</h1>
-          <p className="subtitle">React State Control Panel</p>
+          <h1 className="title">FAIRY COUNTER</h1>
+          <p className="subtitle">Magic Energy Control System</p>
         </div>
 
         <div className="display">
@@ -31,17 +37,18 @@ export default function Activity3() {
 
         <div className="buttons">
           <button className="btn increase" onClick={() => setCount(count + 1)}>
-            + Increase
+            ✨ Add Magic
           </button>
 
           <button className="btn decrease" onClick={() => setCount(count - 1)}>
-            - Decrease
+            🌙 Remove Magic
           </button>
         </div>
 
         <div className="footer">
-          <p>React Activity 3 • Counter System</p>
+          <p>🌸 Activity 3 • Fairy Counter System</p>
         </div>
+
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import "./UserCard.css";
 export default function UserCard({ user }) {
   return (
     <div className="user-card">
+
       <div className="avatar">
         <img src={user.image} alt={user.name} />
       </div>
@@ -14,6 +15,7 @@ export default function UserCard({ user }) {
 
         <button className="btn">View Profile</button>
       </div>
+
     </div>
   );
 }

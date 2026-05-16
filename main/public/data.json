@@ -1,77 +1,79 @@
 [
   {
     "id": 1,
-    "name": "Jane Clea Genoguin",
-    "age": 20,
-    
-    "course": "Computer Science"
+    "name": "Avatar Hero",
+    "role": "Leader",
+    "description": "Main character of the team",
+    "image": "avatar.jpg"
   },
   {
     "id": 2,
-    "name": "Jelyza Francisco",
-    "age": 20,
-    "course": "Information Technology"
+    "name": "Avengers Squad",
+    "role": "Team",
+    "description": "Earth’s strongest heroes",
+    "image": "avengers.jpg"
   },
   {
     "id": 3,
-    "name": "Melvin Lumanta",
-    "age": 19,
-    "course": "Information Technology"
+    "name": "Batman",
+    "role": "Detective",
+    "description": "Dark knight of Gotham",
+    "image": "batman.jpg"
   },
   {
     "id": 4,
-    "name": "John Lorenz Jaropojop",
-    "age": 20,
-    "course": "Information Technology"
+    "name": "Cinderella",
+    "role": "Princess",
+    "description": "Fairytale character",
+    "image": "cinderella.jpg"
   },
   {
     "id": 5,
-    "name": "Angelica Labbao",
-    "age": 19,
-    "course": "Information Technology"
+    "name": "Deadpool",
+    "role": "Anti-hero",
+    "description": "Funny mercenary",
+    "image": "deadpool.jpg"
   },
-   {
+  {
     "id": 6,
-    "name": "Athena Daguman",
-    "age": 19,
-    "course": "Education"
-  }, 
+    "name": "Inception",
+    "role": "Movie",
+    "description": "Dream within a dream",
+    "image": "inception.jpg"
+  },
   {
     "id": 7,
-    "name": "Jerson Palomeras",
-    "age": 19,
-    "course": "Criminology"
-  }, 
+    "name": "Interstellar",
+    "role": "Movie",
+    "description": "Space exploration story",
+    "image": "interstellar.jpg"
+  },
   {
     "id": 8,
-    "name": "Renz Limpiado",
-    "age": 19,
-    "course": "Nusing"
-  }, 
+    "name": "Iron Man",
+    "role": "Hero",
+    "description": "Genius billionaire",
+    "image": "ironman.jpg"
+  },
   {
     "id": 9,
-    "name": "Maria Mae Gonzaga",
-    "age": 11,
-    "course": "Information Technology"
-  }, 
-  {     
+    "name": "Joker",
+    "role": "Villain",
+    "description": "Agent of chaos",
+    "image": "joker.jpg"
+  },
+  {
     "id": 10,
-    "name": "Kristel Sameran",
-    "age": 19,
-    "course": "Hospitality Management"
+    "name": "Matrix",
+    "role": "Movie",
+    "description": "Simulation world",
+    "image": "matrix.jpg"
   },
-   {
+  {
     "id": 11,
-    "name": "Juliet Sarmiento",
-    "age": 20,
-    "course": "Information Technology"
-  },
-   {
-    "id": 12,
-    "name": "Lean Lopar",
-    "age": 28,
-    "course": "Information Technology"
+    "name": "Spider-Man",
+    "role": "Hero",
+    "description": "Friendly neighborhood hero",
+    "image": "spiderman.jpg"
   }
-  
-  
 ]
